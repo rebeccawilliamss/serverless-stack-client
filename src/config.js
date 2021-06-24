@@ -1,4 +1,6 @@
 const config = {
+  STRIPE_KEY: "pk_test_51Iamf2K0VADcN2Tqmkl44j9z6lJEVF5dGh9ws0UqhuGEC0lmOIkjrAkJUGB0FY89SSZ69GDILANQNQXw8Qpm9G4a00dzWqZZV4",
+  MAX_ATTACHMENT_SIZE: 5000000,
     s3: {
       REGION: "eu-west-2",
       BUCKET: "user-app-uploads",
