@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import { CardElement, injectStripe } from "react-stripe-elements";
+import { CardElement, injectStripe } from "@stripe/react-stripe-js";
 import LoaderButton from "./LoaderButton";
 import { useFormFields } from "../libs/hooksLib";
 import "./BillingForm.css";
@@ -42,7 +42,7 @@ function BillingForm({ isLoading, onSubmit, ...props }) {
                     min="0"
                     type="number"
                     value={fields.storage}
-                    onChange={handleFileChange}
+                    onChange={handleFieldChange}
                     placeholder="Number of notes to store"
                 />
             </Form.Group>
