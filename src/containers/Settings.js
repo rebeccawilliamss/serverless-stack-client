@@ -3,7 +3,7 @@ import { API } from "aws-amplify";
 import { useHistory } from "react-router-dom";
 import { onError } from "../libs/errorLib";
 import config from "../config";
-import {Elements} from '@stripe/react-stripe-js';
+import { Elements, StripeProvider } from 'react-stripe-elements';
 import BillingForm from "../components/BillingForm";
 import "./Settings.css";
 
@@ -46,6 +46,7 @@ export default function Settings() {
 
       return (
         <div className="Settings">
+          <StripeProvider stripe={stripe}>
             <Elements
               stripe={stripe}
               fonts={[
@@ -57,6 +58,7 @@ export default function Settings() {
             >
               <BillingForm isLoading={isLoading} onSubmit={handleFormSubmit} />
             </Elements>
+            </StripeProvider>
         </div>
       );
 }
